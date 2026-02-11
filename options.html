@@ -1,37 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8">
+  <title>AI Comment Genie Settings</title>
   <style>
     body {
-      min-width: 320px;
-      background-color: #333;
-      color: #FFF;
-      font-family: 'Tahoma', sans-serif;
-      padding: 0 20px;
+      width: 350px;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', SYSTEM-UI, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
     }
 
-    #icon {
-      max-width: 42px;
-      float: left;
-      margin-right: 15px;
+    .container {
+      padding: 24px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     h1 {
-      font-size: 16px;
-      font-weight: normal;
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+      color: #0a66c2; /* LinkedIn Blue-ish */
+    }
+
+    .form-group {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 12px;
+      border: 2px solid #e1e4e8;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #0a66c2;
+    }
+
+    button#save {
+      width: 100%;
+      padding: 10px;
+      background: #0a66c2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    button#save:hover {
+      background: #004182;
+    }
+
+    #status {
+      height: 20px;
+      font-size: 13px;
+      color: #108510;
+      text-align: center;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    .guide {
+      width: 100%;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      font-size: 13px;
+    }
+
+    .guide p {
+      margin: 0 0 8px 0;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .guide ol {
+      margin: 0;
+      padding-left: 20px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .guide a {
+      color: #0a66c2;
+      text-decoration: none;
+    }
+
+    .guide a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
-
 <body>
-  <img src="icon.png" id="icon" alt="AI Comment Genie Icon" />
-  <h1>AI Comment Genie</h1>
-  <input id="apiKey" type="text" placeholder="OpenRouter API Key" />
-  <button id="save">Save</button>
-  <div id="status"></div>
+  <div class="container">
+    <div class="header">
+      <img src="icon.png" alt="AI Comment Genie" class="logo">
+      <h1>AI Comment Genie</h1>
+    </div>
+
+    <div class="form-group">
+      <!-- Changed to password type so key is hidden by default -->
+      <label for="apiKey">OpenRouter API Key</label>
+      <input id="apiKey" type="password" placeholder="sk-or-v1-..." />
+    </div>
+
+    <button id="save">Save Configuration</button>
+    <div id="status"></div>
+
+    <div class="guide">
+      <p>How to get an API Key:</p>
+      <ol>
+        <li>Visit <a href="https://openrouter.ai/keys" target="_blank">openrouter.ai/keys</a></li>
+        <li>Sign in and create a new key</li>
+        <li>Copy and paste it above</li>
+      </ol>
+    </div>
+  </div>
   <script src="options.js"></script>
 </body>
-
 </html>
