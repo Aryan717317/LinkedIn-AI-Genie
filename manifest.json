@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "AI Comment Genie",
+  "description": "Generates AI-powered comment suggestions for LinkedIn posts.",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_popup": "options.html",
+    "default_icon": "icon.png"
+  }
+}
